@@ -6,6 +6,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeight.w500,
       color: Color(0xff1F2261),
+      fontFamily: "sangbleu-sans",
     );
   }
 
@@ -14,6 +15,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeight.w400,
       color: Color(0xff808080),
+      fontFamily: "sangbleu-sans",
     );
   }
 
@@ -22,6 +24,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 12),
       fontWeight: FontWeight.w400,
       color: Color(0xffA6A1A1),
+      fontFamily: "sangbleu-sans",
     );
   }
 
@@ -30,6 +33,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w400,
       color: Color(0xff808080),
+      fontFamily: "sangbleu-sans",
     );
   }
 
@@ -38,6 +42,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.w500,
       color: Color(0xff3C3C3C),
+      fontFamily: "sangbleu-sans",
     );
   }
 
@@ -46,6 +51,7 @@ class Styles {
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w500,
       color: Color(0xff26278D),
+      fontFamily: "sangbleu-sans",
     );
   }
 }
