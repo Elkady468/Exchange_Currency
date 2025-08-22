@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-import 'package:exchange/core/utils/api_service.dart';
 import 'package:exchange/core/utils/service_locator.dart';
 import 'package:exchange/feature/home/data/repo/home_repo_impl.dart';
 import 'package:exchange/feature/home/presentation/manager/currency_cubit/currency_cubit.dart';
@@ -21,7 +19,15 @@ class ExchangeCurrency extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           CurrencyCubit(getIt.get<HomeRepoImpl>())..getCurrency(),
-      child: MaterialApp(home: Scaffold()),
+      child: MaterialApp(
+        home: Scaffold(
+          body: BlocBuilder<CurrencyCubit, CurrencyState>(
+            builder: (context, state) {
+              return Container();
+            },
+          ),
+        ),
+      ),
     );
   }
 }

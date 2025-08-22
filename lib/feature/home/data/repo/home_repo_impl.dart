@@ -15,9 +15,9 @@ class HomeRepoImpl extends HomeRepo {
     try {
       List<ConversionRates> currency = [];
       var data = await apiService.get(endPoint: "ALL");
-      for (var element in data["conversion_rates"]) {
-        currency.add(ConversionRates.fromJson(element));
-      }
+
+      currency.add(ConversionRates.fromJson(data["conversion_rates"]));
+
       return right(currency);
     } on Exception catch (e) {
       if (e is DioException) {
