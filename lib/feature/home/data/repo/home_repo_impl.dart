@@ -8,7 +8,7 @@ import 'package:exchange/feature/home/data/repo/home_repo.dart';
 class HomeRepoImpl extends HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImpl({required this.apiService});
+  HomeRepoImpl(this.apiService);
 
   @override
   Future<Either<Failure, List<ConversionRates>>> getCurrency() async {
