@@ -2,8 +2,8 @@ import 'package:exchange/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropDown extends StatefulWidget {
-  const CustomDropDown({super.key});
-
+  const CustomDropDown({super.key, required this.dropdownValue});
+  final String dropdownValue;
   @override
   State<CustomDropDown> createState() => _CustomDropDownState();
 }
@@ -174,19 +174,17 @@ class _CustomDropDownState extends State<CustomDropDown> {
     DropdownMenuItem(value: "🇿🇼 ZWL", child: Text("🇿🇼 ZWL")),
   ];
 
-  String dropdownValue = "🇪🇬 EGP";
-
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       dropdownColor: Colors.white,
       style: Styles.Mediume16(context),
-      icon: Icon(Icons.keyboard_arrow_down_rounded),
-      value: dropdownValue,
+      icon: Icon(Icons.keyboard_arrow_down_rounded, color: Colors.black),
+      value: widget.dropdownValue,
       underline: Container(),
       onChanged: (String? newValue) {
         setState(() {
-          dropdownValue = newValue!;
+          widget.dropdownValue != newValue!;
         });
       },
       items: currencyItems,
