@@ -16,6 +16,7 @@ class HomeViewBody extends StatelessWidget {
             HomePageHeader(),
             SizedBox(height: 90),
             ExchangeContainer(),
+            SizedBox(height: 10),
           ],
         ),
       ),

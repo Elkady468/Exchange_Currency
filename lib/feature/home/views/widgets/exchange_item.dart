@@ -4,17 +4,19 @@ import 'package:exchange/feature/home/views/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class ExchangeItem extends StatelessWidget {
-  const ExchangeItem({
+  ExchangeItem({
     super.key,
     required this.headerText,
     required this.hintText,
     required this.dropdownValue,
     required this.ToOrFrom,
+    this.onChanged,
   });
   final String headerText;
   final String hintText;
   final String dropdownValue;
   final bool ToOrFrom;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +28,10 @@ class ExchangeItem extends StatelessWidget {
           children: [
             CustomDropDown(dropdownValue: dropdownValue, toOrFrom: ToOrFrom),
             Spacer(),
-            SizedBox(width: 125, child: CustomTextField(hintText: hintText)),
+            SizedBox(
+              width: 150,
+              child: CustomTextField(hintText: hintText, onChanged: onChanged),
+            ),
           ],
         ),
       ],

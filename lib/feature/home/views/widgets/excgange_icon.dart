@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ExcgangeIcon extends StatelessWidget {
-  const ExcgangeIcon({super.key});
+class ExchangeIcon extends StatelessWidget {
+  const ExchangeIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +11,7 @@ class ExcgangeIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(90),
         color: Color(0xff26278D),
       ),
-      child: Icon(
-        Icons.currency_exchange_outlined,
-        color: Colors.white,
-        size: 32,
-      ),
+      child: Icon(Icons.swap_vert, color: Colors.white, size: 32),
     );
   }
 }

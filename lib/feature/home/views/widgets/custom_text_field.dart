@@ -12,9 +12,7 @@ class CustomTextField extends StatelessWidget {
       textAlign: TextAlign.end,
       onChanged: onChanged,
       keyboardType: TextInputType.numberWithOptions(decimal: true),
-      inputFormatters: [
-        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$')),
-      ],
+      inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))],
       style: Styles.Mediume18(context),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(right: 6),
