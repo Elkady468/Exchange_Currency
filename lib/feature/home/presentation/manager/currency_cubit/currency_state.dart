@@ -10,11 +10,29 @@ sealed class CurrencyState extends Equatable {
 final class CurrencyInitial extends CurrencyState {}
 
 final class CurrencySuccess extends CurrencyState {
-  final List<ConversionRates> currency;
+  final Map<String, dynamic> currency;
+  final String fromCurrency;
+  final String toCurrency;
+  const CurrencySuccess({
+    required this.fromCurrency,
+    required this.toCurrency,
+    required this.currency,
+  });
 
-  const CurrencySuccess({required this.currency});
+  CurrencySuccess copyWith({
+    Map<String, dynamic>? currency,
+    String? fromCurrency,
+    String? toCurrency,
+  }) {
+    return CurrencySuccess(
+      currency: currency ?? this.currency,
+      fromCurrency: fromCurrency ?? this.fromCurrency,
+      toCurrency: toCurrency ?? this.toCurrency,
+    );
+  }
+
   @override
-  List<Object> get props => [currency];
+  List<Object> get props => [currency, fromCurrency, toCurrency];
 }
 
 final class CurrencyLoading extends CurrencyState {}

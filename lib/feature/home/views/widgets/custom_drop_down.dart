@@ -1,9 +1,18 @@
+import 'dart:developer';
+
 import 'package:exchange/core/utils/app_styles.dart';
+import 'package:exchange/feature/home/presentation/manager/currency_cubit/currency_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomDropDown extends StatefulWidget {
-  const CustomDropDown({super.key, required this.dropdownValue});
-  final String dropdownValue;
+  CustomDropDown({
+    super.key,
+    required this.dropdownValue,
+    required this.toOrFrom,
+  });
+  String dropdownValue;
+  final bool toOrFrom;
   @override
   State<CustomDropDown> createState() => _CustomDropDownState();
 }
@@ -184,7 +193,15 @@ class _CustomDropDownState extends State<CustomDropDown> {
       underline: Container(),
       onChanged: (String? newValue) {
         setState(() {
-          widget.dropdownValue != newValue!;
+          widget.dropdownValue = newValue!;
+
+          log(widget.dropdownValue);
+          //  final code = newValue.split(' ').last; // "USD", "EGP", ...
+          if (widget.toOrFrom) {
+            BlocProvider.of<CurrencyCubit>(context).setToCurrency(newValue);
+          } else {
+            BlocProvider.of<CurrencyCubit>(context).setFromCurrency(newValue);
+          }
         });
       },
       items: currencyItems,

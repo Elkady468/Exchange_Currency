@@ -9,10 +9,12 @@ class ExchangeItem extends StatelessWidget {
     required this.headerText,
     required this.hintText,
     required this.dropdownValue,
+    required this.ToOrFrom,
   });
   final String headerText;
   final String hintText;
   final String dropdownValue;
+  final bool ToOrFrom;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +24,7 @@ class ExchangeItem extends StatelessWidget {
         SizedBox(height: 8),
         Row(
           children: [
-            CustomDropDown(dropdownValue: dropdownValue),
+            CustomDropDown(dropdownValue: dropdownValue, toOrFrom: ToOrFrom),
             Spacer(),
             SizedBox(width: 125, child: CustomTextField(hintText: hintText)),
           ],

@@ -11,12 +11,10 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<ConversionRates>>> getCurrency() async {
+  Future<Either<Failure, Map<String, dynamic>>> getCurrency() async {
     try {
-      List<ConversionRates> currency = [];
       var data = await apiService.get(endPoint: "ALL");
-
-      currency.add(ConversionRates.fromJson(data["conversion_rates"]));
+      Map<String, dynamic> currency = data["conversion_rates"];
 
       return right(currency);
     } on Exception catch (e) {
