@@ -1,3 +1,4 @@
+import 'package:exchange/feature/home/views/widgets/exchange_container.dart';
 import 'package:exchange/feature/home/views/widgets/home_page_header.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,14 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: Column(children: [SizedBox(height: 90), HomePageHeader()]),
+      child: Column(
+        children: [
+          SizedBox(height: 90),
+          HomePageHeader(),
+          SizedBox(height: 90),
+          ExchangeContainer(),
+        ],
+      ),
     );
   }
 }
