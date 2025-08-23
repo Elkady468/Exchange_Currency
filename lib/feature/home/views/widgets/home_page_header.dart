@@ -7,7 +7,15 @@ class HomePageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text("Currency Converter", style: Styles.Mediume20(context))],
+      children: [
+        Text("Currency Converter", style: Styles.Mediume20(context)),
+        SizedBox(height: 20),
+        Text(
+          "Check live rates, set rate alerts, receive notifications and more.",
+          style: Styles.Reguler14(context),
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }

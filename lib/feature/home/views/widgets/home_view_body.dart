@@ -6,6 +6,9 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [HomePageHeader()]);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(children: [SizedBox(height: 90), HomePageHeader()]),
+    );
   }
 }
